@@ -19,7 +19,7 @@ export class CategoryService {
   }
   /**
    * save categories
-   * @param body save categories
+   * @param body
    */
   saveCategorie(body: any) {
     const endPoint = `${base_url}/categories`;
@@ -37,8 +37,7 @@ export class CategoryService {
   }
 
   /**
-   * delete categories
-   * @param body 
+   * delete categories 
    * @param id 
    */
   deleteCategorie(id: any) {
@@ -48,7 +47,6 @@ export class CategoryService {
 
  /**
   * get categories by id
-  * @param body 
   * @param id 
   */
   getCategorieById(id: any) {
