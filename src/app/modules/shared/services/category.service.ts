@@ -1,20 +1,20 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { BASE_ENDPOINT } from '../../../config/app';
 
-const base_url = "http://localhost:8080/api/v1"
 
 @Injectable({
   providedIn: 'root'
 })
 export class CategoryService {
-
+  protected base_url = BASE_ENDPOINT;
   constructor(private http: HttpClient) { }
   
   /**
    * get all categories
    */
   getCategories() {
-    const endPoint = `${base_url}/categories`;
+    const endPoint = `${this.base_url}/categories`;
     return this.http.get(endPoint)
   }
   /**
@@ -22,7 +22,7 @@ export class CategoryService {
    * @param body
    */
   saveCategorie(body: any) {
-    const endPoint = `${base_url}/categories`;
+    const endPoint = `${this.base_url}/categories`;
     return this.http.post(endPoint, body);
   }
 
@@ -32,7 +32,7 @@ export class CategoryService {
    * @param id 
    */
   updateCategorie(body: any, id: any) {
-    const endPoint = `${base_url}/categories/${id}`;
+    const endPoint = `${this.base_url}/categories/${id}`;
     return this.http.put(endPoint, body, id);
   }
 
@@ -41,7 +41,7 @@ export class CategoryService {
    * @param id 
    */
   deleteCategorie(id: any) {
-    const endPoint = `${base_url}/categories/${id}`;
+    const endPoint = `${this.base_url}/categories/${id}`;
     return this.http.delete(endPoint);
   }
 
@@ -50,7 +50,7 @@ export class CategoryService {
   * @param id 
   */
   getCategorieById(id: any) {
-    const endPoint = `${base_url}/categories/${id}`;
+    const endPoint = `${this.base_url}/categories/${id}`;
     return this.http.get(endPoint);
   }
 
